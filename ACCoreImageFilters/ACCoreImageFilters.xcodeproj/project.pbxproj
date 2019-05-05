@@ -12,6 +12,12 @@
 		500D224C227710D100CA1E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 500D224B227710D100CA1E4D /* Assets.xcassets */; };
 		500D224F227710D100CA1E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 500D224D227710D100CA1E4D /* LaunchScreen.storyboard */; };
 		500D2252227710D100CA1E4D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 500D2251227710D100CA1E4D /* main.m */; };
+		500D225C2278369500CA1E4D /* ACImageMaskCIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 500D225B2278369500CA1E4D /* ACImageMaskCIFilter.m */; };
+		500D22602278409B00CA1E4D /* ACImageMaskCIFilter.metal in Sources */ = {isa = PBXBuildFile; fileRef = 500D225F2278409B00CA1E4D /* ACImageMaskCIFilter.metal */; };
+		500D226422785F5200CA1E4D /* star.png in Resources */ = {isa = PBXBuildFile; fileRef = 500D226122785F5200CA1E4D /* star.png */; };
+		500D226522785F5200CA1E4D /* shuijiao_clipped.png in Resources */ = {isa = PBXBuildFile; fileRef = 500D226222785F5200CA1E4D /* shuijiao_clipped.png */; };
+		500D226622785F5200CA1E4D /* shuijiao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 500D226322785F5200CA1E4D /* shuijiao.jpg */; };
+		502594EA227ED36F00517016 /* testtt.png in Resources */ = {isa = PBXBuildFile; fileRef = 502594E9227ED36F00517016 /* testtt.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +30,13 @@
 		500D224E227710D100CA1E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		500D2250227710D100CA1E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		500D2251227710D100CA1E4D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		500D225A2278369500CA1E4D /* ACImageMaskCIFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACImageMaskCIFilter.h; sourceTree = "<group>"; };
+		500D225B2278369500CA1E4D /* ACImageMaskCIFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACImageMaskCIFilter.m; sourceTree = "<group>"; };
+		500D225F2278409B00CA1E4D /* ACImageMaskCIFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ACImageMaskCIFilter.metal; sourceTree = "<group>"; };
+		500D226122785F5200CA1E4D /* star.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = star.png; sourceTree = "<group>"; };
+		500D226222785F5200CA1E4D /* shuijiao_clipped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuijiao_clipped.png; sourceTree = "<group>"; };
+		500D226322785F5200CA1E4D /* shuijiao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shuijiao.jpg; sourceTree = "<group>"; };
+		502594E9227ED36F00517016 /* testtt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testtt.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,12 +73,35 @@
 				500D2243227710CF00CA1E4D /* AppDelegate.m */,
 				500D2245227710CF00CA1E4D /* ViewController.h */,
 				500D2246227710CF00CA1E4D /* ViewController.m */,
+				500D22582278364300CA1E4D /* CIFilters */,
+				500D22592278366300CA1E4D /* res */,
 				500D224B227710D100CA1E4D /* Assets.xcassets */,
 				500D224D227710D100CA1E4D /* LaunchScreen.storyboard */,
 				500D2250227710D100CA1E4D /* Info.plist */,
 				500D2251227710D100CA1E4D /* main.m */,
 			);
 			path = ACCoreImageFilters;
+			sourceTree = "<group>";
+		};
+		500D22582278364300CA1E4D /* CIFilters */ = {
+			isa = PBXGroup;
+			children = (
+				500D225A2278369500CA1E4D /* ACImageMaskCIFilter.h */,
+				500D225B2278369500CA1E4D /* ACImageMaskCIFilter.m */,
+				500D225F2278409B00CA1E4D /* ACImageMaskCIFilter.metal */,
+			);
+			path = CIFilters;
+			sourceTree = "<group>";
+		};
+		500D22592278366300CA1E4D /* res */ = {
+			isa = PBXGroup;
+			children = (
+				502594E9227ED36F00517016 /* testtt.png */,
+				500D226222785F5200CA1E4D /* shuijiao_clipped.png */,
+				500D226322785F5200CA1E4D /* shuijiao.jpg */,
+				500D226122785F5200CA1E4D /* star.png */,
+			);
+			path = res;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,7 +162,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				500D224F227710D100CA1E4D /* LaunchScreen.storyboard in Resources */,
+				500D226622785F5200CA1E4D /* shuijiao.jpg in Resources */,
 				500D224C227710D100CA1E4D /* Assets.xcassets in Resources */,
+				500D226422785F5200CA1E4D /* star.png in Resources */,
+				500D226522785F5200CA1E4D /* shuijiao_clipped.png in Resources */,
+				502594EA227ED36F00517016 /* testtt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +178,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				500D2247227710CF00CA1E4D /* ViewController.m in Sources */,
+				500D225C2278369500CA1E4D /* ACImageMaskCIFilter.m in Sources */,
 				500D2252227710D100CA1E4D /* main.m in Sources */,
 				500D2244227710CF00CA1E4D /* AppDelegate.m in Sources */,
+				500D22602278409B00CA1E4D /* ACImageMaskCIFilter.metal in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -208,7 +250,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -261,7 +303,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -276,10 +318,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TA6VL8F55W;
 				INFOPLIST_FILE = ACCoreImageFilters/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTLLINKER_FLAGS = "-cikernel";
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acsoft.ACCoreImageFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -293,10 +338,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = TA6VL8F55W;
 				INFOPLIST_FILE = ACCoreImageFilters/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MTLLINKER_FLAGS = "-cikernel";
+				MTL_COMPILER_FLAGS = "-fcikernel";
 				PRODUCT_BUNDLE_IDENTIFIER = com.acsoft.ACCoreImageFilters;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
