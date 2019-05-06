@@ -8,6 +8,7 @@
 
 #import <CoreImage/CoreImage.h>
 
+
 @interface ACImageMaskCIFilter : CIFilter
 
 @property (nonatomic, strong) CIImage  *inputImage;

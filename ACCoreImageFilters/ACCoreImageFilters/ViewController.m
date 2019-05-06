@@ -9,9 +9,11 @@
 #import "ViewController.h"
 
 #import "ACImageMaskCIFilter.h"
-
+#import "ACImageOpacityFilter.h"
 
 @interface ViewController ()
+
+@property (nonatomic, strong) UIImageView *originalImageView;
 
 @property (nonatomic, strong) UIImageView *resultImageView;
 
@@ -26,10 +28,12 @@
     
     [self configSubviews];
     
-    [self testCIFilter];
+    self.originalImageView.image = [UIImage imageNamed:@"shuijiao_clipped.png"];
     
-    UIColor *avgColor =  [self avgColorFromImage:[UIImage imageNamed:@"star.png"]];
-    self.view.backgroundColor = avgColor;
+    [self testHardLightWithMask];
+    
+//    UIColor *avgColor =  [self avgColorFromImage:[UIImage imageNamed:@"star.png"]];
+//    self.view.backgroundColor = avgColor;
 
 }
 
@@ -37,29 +41,73 @@
     CGFloat imageEdge = 300.0;
     CGFloat imageX = (self.view.frame.size.width - imageEdge) / 2.0;
     
+    self.originalImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
+    self.originalImageView.contentMode = UIViewContentModeScaleAspectFit;
+    self.originalImageView.backgroundColor = [UIColor whiteColor];
+    
+    self.originalImageView.clipsToBounds = true;
+    self.originalImageView.layer.masksToBounds = true;
+    self.originalImageView.layer.borderColor = [UIColor grayColor].CGColor;
+    self.originalImageView.layer.borderWidth = 2.0;
+    
+    [self.view addSubview:self.originalImageView];
+    self.originalImageView.frame = CGRectMake(imageX,
+                                              60.0,
+                                              imageEdge,
+                                              imageEdge);
+    
+    
     self.resultImageView = [[UIImageView alloc] initWithFrame:CGRectZero];
     self.resultImageView.contentMode = UIViewContentModeScaleAspectFit;
     self.resultImageView.backgroundColor = [UIColor clearColor];
-    [self.view addSubview:self.resultImageView];
     
+    self.resultImageView.clipsToBounds = true;
+    self.resultImageView.layer.masksToBounds = true;
+    self.resultImageView.layer.borderColor = [UIColor grayColor].CGColor;
+    self.resultImageView.layer.borderWidth = 2.0;
+    
+    [self.view addSubview:self.resultImageView];
     self.resultImageView.frame = CGRectMake(imageX,
-                                            120.0,
+                                            self.originalImageView.frame.origin.y + self.originalImageView.frame.size.height + 20.0,
                                             imageEdge,
                                             imageEdge);
 }
 
-- (void)testCIFilter {
+- (void)testHardLightWithMask {
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    
+    UIImage *originalImage = [UIImage imageNamed:@"shuijiao_clipped.png"];
+    UIImage *maskImage = [self imageMaskBy:originalImage];
+    UIImage *customedAlphaMaskImage = [self customedAlphaImageBy:maskImage];
+    
+    CIImage *sourceImage = [[CIImage alloc] initWithImage:originalImage];
+    CIImage *overlayImage = [[CIImage alloc] initWithImage:customedAlphaMaskImage];
+    
+    CIImage *outputImage;
+    
+    CIFilter *filter = [CIFilter filterWithName:@"CIHardLightBlendMode"];
+    [filter setDefaults];
+    [filter setValue:sourceImage forKey:kCIInputImageKey];
+    [filter setValue:overlayImage forKey:kCIInputBackgroundImageKey];
+    outputImage = [filter outputImage];
+    
+    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    
+    UIImage *resImage = [UIImage imageWithCGImage:cgimg];
+    CGImageRelease(cgimg);
+    
+    self.resultImageView.image = resImage;
+}
 
-    UIImage *image = [UIImage imageNamed:@"star.png"];
-    
-    
+- (UIImage *)imageMaskBy:(UIImage *)image {
     CIImage *ciImage = [[CIImage alloc] initWithImage:image];
     
     ACImageMaskCIFilter *filter = [[ACImageMaskCIFilter alloc] init];
 
     filter.inputImage = ciImage;
     filter.maskColor =  [CIColor colorWithCGColor:UIColor.blueColor.CGColor];
-    filter.needInvertedMask = true;
+    //filter.needInvertedMask = true;
     
     CIImage *outputImage = filter.outputImage;
     
@@ -70,7 +118,27 @@
     UIImage* resImage = [UIImage imageWithCGImage:cgImage];
     CGImageRelease(cgImage);
     
-    self.resultImageView.image = resImage;
+    return resImage;
+}
+
+- (UIImage *)customedAlphaImageBy:(UIImage *)image {
+    CIImage *ciImage = [[CIImage alloc] initWithImage:image];
+    
+    ACImageOpacityFilter *filter = [[ACImageOpacityFilter alloc] init];
+    
+    filter.inputImage = ciImage;
+    filter.alpha = 0.5;
+    
+    CIImage *outputImage = filter.outputImage;
+    
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgImage = [context createCGImage:outputImage
+                                       fromRect:outputImage.extent];
+    UIImage* resImage = [UIImage imageWithCGImage:cgImage];
+    CGImageRelease(cgImage);
+    
+    return resImage;
 }
 
 - (UIColor *)avgColorFromImage:(UIImage *)image {
