@@ -1,0 +1,9 @@
+kernel vec4 vignetteKernel(sampler image, vec3 maskColor, float needInvertedMask)
+{
+    vec4 textureColor = sample(image, samplerCoord(image));
+    textureColor.rgb = maskColor;
+    if (needInvertedMask > 0.0) {
+        textureColor.a = (1.0 - textureColor.a);
+    }
+    return textureColor;
+}
