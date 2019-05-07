@@ -11,9 +11,9 @@
 
 @interface ACImageMaskCIFilter : CIFilter
 
-@property (nonatomic, strong) CIImage  *inputImage;
+@property (nonatomic, strong) CIImage *inputImage;
 
-@property (nonatomic, strong) CIColor  *maskColor;
+@property (nonatomic, strong) CIColor *maskColor;
 
 @property (nonatomic, assign) BOOL needInvertedMask;
 

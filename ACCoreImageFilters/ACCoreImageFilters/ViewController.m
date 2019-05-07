@@ -10,6 +10,8 @@
 
 #import "ACImageMaskCIFilter.h"
 #import "ACImageOpacityCIFilter.h"
+#import "ACImageClipCIFilter.h"
+
 
 @interface ViewController ()
 
@@ -30,7 +32,9 @@
     
     self.originalImageView.image = [UIImage imageNamed:@"shuijiao_clipped.png"];
     
-    [self testHardLightWithMask];
+    
+    [self testClipGlow];
+    //[self testHardLightWithMask];
     
 //    UIColor *avgColor =  [self avgColorFromImage:[UIImage imageNamed:@"star.png"]];
 //    self.view.backgroundColor = avgColor;
@@ -73,12 +77,48 @@
                                             imageEdge);
 }
 
-- (void)testHardLightWithMask {
+- (void)testClipGlow {
+    UIImage *originalImage = [UIImage imageNamed:@"shuijiao_clipped.png"];
+    
+    CIImage *originalCIImage = [[CIImage alloc] initWithImage:originalImage];
+    
+    ACImageMaskCIFilter *filter = [[ACImageMaskCIFilter alloc] init];
+    filter.inputImage = originalCIImage;
+    filter.maskColor =  [CIColor colorWithCGColor:UIColor.blueColor.CGColor];
+    filter.needInvertedMask = true;
+    CIImage *invertedMaskCIImage = filter.outputImage;
+    
+    
+    CGFloat blurRadius = (originalImage.size.width * 0.03);
+    NSLog(@"blur radius = %@", @(blurRadius));
+    CIFilter *gaussianBlurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
+    [gaussianBlurFilter setValue:invertedMaskCIImage forKey:@"inputImage"];
+    [gaussianBlurFilter setValue:@(blurRadius) forKey:@"inputRadius"];
+    CIImage *gaussianBlurInvertedMaskCIImage = gaussianBlurFilter.outputImage;
+
+    CIImage *croppedImage = [gaussianBlurInvertedMaskCIImage imageByCroppingToRect:invertedMaskCIImage.extent];
+
+    
+    
+    ACImageClipCIFilter *clipFilter = [[ACImageClipCIFilter alloc] init];
+    clipFilter.inputImage = croppedImage;
+    clipFilter.clipShapeImage = originalCIImage;
+    CIImage *glowCIImage = clipFilter.outputImage;
+
     
     CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgimg = [context createCGImage:glowCIImage
+                                     fromRect:glowCIImage.extent];
     
+    UIImage *resImage = [UIImage imageWithCGImage:cgimg];
+    CGImageRelease(cgimg);
+    
+    self.resultImageView.image = resImage;
+}
+
+- (void)testHardLightWithMask {
     UIImage *originalImage = [UIImage imageNamed:@"shuijiao_clipped.png"];
-    UIImage *maskImage = [self imageMaskBy:originalImage];
+    UIImage *maskImage = [self imageMaskBy:originalImage needInvertedMask:false];
     UIImage *customedAlphaMaskImage = [self customedAlphaImageBy:maskImage];
     
     CIImage *sourceImage = [[CIImage alloc] initWithImage:originalImage];
@@ -90,9 +130,12 @@
     [filter setDefaults];
     [filter setValue:sourceImage forKey:kCIInputImageKey];
     [filter setValue:overlayImage forKey:kCIInputBackgroundImageKey];
-    outputImage = [filter outputImage];
+    outputImage = filter.outputImage;
     
-    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgimg = [context createCGImage:outputImage
+                                     fromRect:outputImage.extent];
     
     UIImage *resImage = [UIImage imageWithCGImage:cgimg];
     CGImageRelease(cgimg);
@@ -100,14 +143,14 @@
     self.resultImageView.image = resImage;
 }
 
-- (UIImage *)imageMaskBy:(UIImage *)image {
+- (UIImage *)imageMaskBy:(UIImage *)image needInvertedMask:(BOOL)needInvertedMask {
     CIImage *ciImage = [[CIImage alloc] initWithImage:image];
     
     ACImageMaskCIFilter *filter = [[ACImageMaskCIFilter alloc] init];
 
     filter.inputImage = ciImage;
     filter.maskColor =  [CIColor colorWithCGColor:UIColor.blueColor.CGColor];
-    //filter.needInvertedMask = true;
+    filter.needInvertedMask = needInvertedMask;
     
     CIImage *outputImage = filter.outputImage;
     
