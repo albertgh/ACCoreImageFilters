@@ -1,5 +1,5 @@
 //
-//  ACImageOpacityFilter.h
+//  ACImageOpacityCIFilter.h
 //  ACCoreImageFilters
 //
 //  Created by albert on 2019/5/5.
@@ -9,7 +9,7 @@
 #import <CoreImage/CoreImage.h>
 
 
-@interface ACImageOpacityFilter : CIFilter
+@interface ACImageOpacityCIFilter : CIFilter
 
 @property (nonatomic, strong) CIImage  *inputImage;
 

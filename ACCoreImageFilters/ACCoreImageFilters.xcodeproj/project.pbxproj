@@ -17,11 +17,11 @@
 		500D226522785F5200CA1E4D /* shuijiao_clipped.png in Resources */ = {isa = PBXBuildFile; fileRef = 500D226222785F5200CA1E4D /* shuijiao_clipped.png */; };
 		500D226622785F5200CA1E4D /* shuijiao.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 500D226322785F5200CA1E4D /* shuijiao.jpg */; };
 		502594EA227ED36F00517016 /* testtt.png in Resources */ = {isa = PBXBuildFile; fileRef = 502594E9227ED36F00517016 /* testtt.png */; };
-		502594ED227EF67A00517016 /* ACImageOpacityFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 502594EC227EF67A00517016 /* ACImageOpacityFilter.m */; };
-		502595102280322500517016 /* ACImageOpacityFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 5025950E2280322500517016 /* ACImageOpacityFilter.metallib */; };
-		50259518228165FE00517016 /* ACImageMaskCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 50259517228165FD00517016 /* ACImageMaskCIFilter.metallib */; };
-		5025951D228166B100517016 /* ACImageOpacityFilter.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 5025951B228166B000517016 /* ACImageOpacityFilter.cikernel */; };
 		5025951E228166B100517016 /* ACImageMaskCIFilter.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 5025951C228166B100517016 /* ACImageMaskCIFilter.cikernel */; };
+		5025952322816A1400517016 /* ACImageOpacityCIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5025951F22816A1300517016 /* ACImageOpacityCIFilter.m */; };
+		5025952822816A3D00517016 /* ACImageOpacityCIFilter.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 5025952722816A3D00517016 /* ACImageOpacityCIFilter.cikernel */; };
+		5025952B22816B4300517016 /* ACImageOpacityCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 5025952922816B4200517016 /* ACImageOpacityCIFilter.metallib */; };
+		5025952C22816B4300517016 /* ACImageMaskCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 5025952A22816B4200517016 /* ACImageMaskCIFilter.metallib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,13 +41,13 @@
 		500D226222785F5200CA1E4D /* shuijiao_clipped.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shuijiao_clipped.png; sourceTree = "<group>"; };
 		500D226322785F5200CA1E4D /* shuijiao.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = shuijiao.jpg; sourceTree = "<group>"; };
 		502594E9227ED36F00517016 /* testtt.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = testtt.png; sourceTree = "<group>"; };
-		502594EB227EF67A00517016 /* ACImageOpacityFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACImageOpacityFilter.h; sourceTree = "<group>"; };
-		502594EC227EF67A00517016 /* ACImageOpacityFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACImageOpacityFilter.m; sourceTree = "<group>"; };
-		502594F0227FDD5900517016 /* ACImageOpacityFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ACImageOpacityFilter.metal; sourceTree = "<group>"; };
-		5025950E2280322500517016 /* ACImageOpacityFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageOpacityFilter.metallib; sourceTree = "<group>"; };
-		50259517228165FD00517016 /* ACImageMaskCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageMaskCIFilter.metallib; sourceTree = "<group>"; };
-		5025951B228166B000517016 /* ACImageOpacityFilter.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACImageOpacityFilter.cikernel; sourceTree = "<group>"; };
+		502594EB227EF67A00517016 /* ACImageOpacityCIFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACImageOpacityCIFilter.h; sourceTree = "<group>"; };
 		5025951C228166B100517016 /* ACImageMaskCIFilter.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACImageMaskCIFilter.cikernel; sourceTree = "<group>"; };
+		5025951F22816A1300517016 /* ACImageOpacityCIFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACImageOpacityCIFilter.m; sourceTree = "<group>"; };
+		5025952122816A1400517016 /* ACImageOpacityCIFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ACImageOpacityCIFilter.metal; sourceTree = "<group>"; };
+		5025952722816A3D00517016 /* ACImageOpacityCIFilter.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACImageOpacityCIFilter.cikernel; sourceTree = "<group>"; };
+		5025952922816B4200517016 /* ACImageOpacityCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageOpacityCIFilter.metallib; sourceTree = "<group>"; };
+		5025952A22816B4200517016 /* ACImageMaskCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageMaskCIFilter.metallib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,12 +101,12 @@
 				500D225B2278369500CA1E4D /* ACImageMaskCIFilter.m */,
 				5025951C228166B100517016 /* ACImageMaskCIFilter.cikernel */,
 				500D225F2278409B00CA1E4D /* ACImageMaskCIFilter.metal */,
-				50259517228165FD00517016 /* ACImageMaskCIFilter.metallib */,
-				502594EB227EF67A00517016 /* ACImageOpacityFilter.h */,
-				502594EC227EF67A00517016 /* ACImageOpacityFilter.m */,
-				5025951B228166B000517016 /* ACImageOpacityFilter.cikernel */,
-				502594F0227FDD5900517016 /* ACImageOpacityFilter.metal */,
-				5025950E2280322500517016 /* ACImageOpacityFilter.metallib */,
+				5025952A22816B4200517016 /* ACImageMaskCIFilter.metallib */,
+				502594EB227EF67A00517016 /* ACImageOpacityCIFilter.h */,
+				5025951F22816A1300517016 /* ACImageOpacityCIFilter.m */,
+				5025952722816A3D00517016 /* ACImageOpacityCIFilter.cikernel */,
+				5025952122816A1400517016 /* ACImageOpacityCIFilter.metal */,
+				5025952922816B4200517016 /* ACImageOpacityCIFilter.metallib */,
 			);
 			path = CIFilters;
 			sourceTree = "<group>";
@@ -179,13 +179,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5025951D228166B100517016 /* ACImageOpacityFilter.cikernel in Resources */,
 				500D224F227710D100CA1E4D /* LaunchScreen.storyboard in Resources */,
-				50259518228165FE00517016 /* ACImageMaskCIFilter.metallib in Resources */,
+				5025952C22816B4300517016 /* ACImageMaskCIFilter.metallib in Resources */,
 				500D226622785F5200CA1E4D /* shuijiao.jpg in Resources */,
+				5025952822816A3D00517016 /* ACImageOpacityCIFilter.cikernel in Resources */,
 				500D224C227710D100CA1E4D /* Assets.xcassets in Resources */,
-				502595102280322500517016 /* ACImageOpacityFilter.metallib in Resources */,
 				5025951E228166B100517016 /* ACImageMaskCIFilter.cikernel in Resources */,
+				5025952B22816B4300517016 /* ACImageOpacityCIFilter.metallib in Resources */,
 				500D226422785F5200CA1E4D /* star.png in Resources */,
 				500D226522785F5200CA1E4D /* shuijiao_clipped.png in Resources */,
 				502594EA227ED36F00517016 /* testtt.png in Resources */,
@@ -201,9 +201,9 @@
 			files = (
 				500D2247227710CF00CA1E4D /* ViewController.m in Sources */,
 				500D225C2278369500CA1E4D /* ACImageMaskCIFilter.m in Sources */,
+				5025952322816A1400517016 /* ACImageOpacityCIFilter.m in Sources */,
 				500D2252227710D100CA1E4D /* main.m in Sources */,
 				500D2244227710CF00CA1E4D /* AppDelegate.m in Sources */,
-				502594ED227EF67A00517016 /* ACImageOpacityFilter.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

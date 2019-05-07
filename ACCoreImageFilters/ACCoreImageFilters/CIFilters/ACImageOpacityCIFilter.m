@@ -1,22 +1,22 @@
 //
-//  ACImageOpacityFilter.m
+//  ACImageOpacityCIFilter.m
 //  ACCoreImageFilters
 //
 //  Created by albert on 2019/5/5.
 //  Copyright © 2019 albert. All rights reserved.
 //
 
-#import "ACImageOpacityFilter.h"
+#import "ACImageOpacityCIFilter.h"
 
 
-@interface ACImageOpacityFilter()
+@interface ACImageOpacityCIFilter()
 
 @property (nonatomic, strong) CIKernel *customKernel;
 
 @end
 
 
-@implementation ACImageOpacityFilter
+@implementation ACImageOpacityCIFilter
 
 - (instancetype)init {
     self = [super init];
@@ -24,8 +24,8 @@
         if (self.customKernel == nil) {
             if (@available(iOS 11.0, *)) {
                 NSURL *kernelURL =
-                [[NSBundle bundleForClass:[ACImageOpacityFilter class]]
-                 URLForResource:@"ACImageOpacityFilter"
+                [[NSBundle bundleForClass:[ACImageOpacityCIFilter class]]
+                 URLForResource:@"ACImageOpacityCIFilter"
                  withExtension:@"metallib"];
                 NSError *error;
                 NSData *data = [NSData dataWithContentsOfURL:kernelURL];
@@ -38,7 +38,7 @@
                 }
             } else {
                 NSBundle *bundle = [NSBundle bundleForClass: [self class]];
-                NSURL *kernelURL = [bundle URLForResource:@"ACImageOpacityFilter" withExtension:@"cikernel"];
+                NSURL *kernelURL = [bundle URLForResource:@"ACImageOpacityCIFilter" withExtension:@"cikernel"];
                 
                 NSError *error;
                 NSString *kernelCode =

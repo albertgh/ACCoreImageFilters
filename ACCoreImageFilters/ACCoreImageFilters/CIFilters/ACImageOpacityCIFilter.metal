@@ -1,5 +1,5 @@
 //
-//  ACImageOpacityFilter.metal
+//  ACImageOpacityCIFilter.metal
 //  ACCoreImageFilters
 //
 //  Created by albert on 2019/5/6.

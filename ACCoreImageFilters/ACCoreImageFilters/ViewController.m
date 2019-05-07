@@ -9,7 +9,7 @@
 #import "ViewController.h"
 
 #import "ACImageMaskCIFilter.h"
-#import "ACImageOpacityFilter.h"
+#import "ACImageOpacityCIFilter.h"
 
 @interface ViewController ()
 
@@ -124,7 +124,7 @@
 - (UIImage *)customedAlphaImageBy:(UIImage *)image {
     CIImage *ciImage = [[CIImage alloc] initWithImage:image];
     
-    ACImageOpacityFilter *filter = [[ACImageOpacityFilter alloc] init];
+    ACImageOpacityCIFilter *filter = [[ACImageOpacityCIFilter alloc] init];
     
     filter.inputImage = ciImage;
     filter.alpha = 0.5;
