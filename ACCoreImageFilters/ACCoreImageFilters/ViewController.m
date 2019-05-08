@@ -45,6 +45,7 @@
     
     [self luminanceFromImage:image];
 
+    //[self testExposure];
 }
 
 - (void)configSubviews {
@@ -83,6 +84,32 @@
                                             imageEdge);
 }
 
+- (void)testExposure {
+    UIImage *originalImage = [UIImage imageNamed:@"shuijiao_clipped.png"];
+    
+    CIImage *originalCIImage = [[CIImage alloc] initWithImage:originalImage];
+    
+    CIFilter *exposureFilter = [CIFilter filterWithName:@"CIExposureAdjust"];
+    
+    //NSDictionary *myFilterAttributes = [exposureFilter attributes];
+    //NSLog(@"aa %@", myFilterAttributes);
+    
+    [exposureFilter setValue:originalCIImage forKey:kCIInputImageKey];
+    [exposureFilter setValue:@(5.0) forKey:kCIInputEVKey];
+    CIImage *outputImage = [exposureFilter valueForKey:kCIOutputImageKey];
+    
+    
+    CIContext *context = [CIContext contextWithOptions:nil];
+    CGImageRef cgimg = [context createCGImage:outputImage
+                                     fromRect:outputImage.extent];
+    
+    UIImage *resImage = [UIImage imageWithCGImage:cgimg];
+    CGImageRelease(cgimg);
+    
+    self.resultImageView.image = resImage;
+
+}
+
 - (void)testClipGlow {
     UIImage *originalImage = [UIImage imageNamed:@"shuijiao_clipped.png"];
     
@@ -98,8 +125,8 @@
     CGFloat blurRadius = (originalImage.size.width * 0.02);
     NSLog(@"blur radius = %@", @(blurRadius));
     CIFilter *gaussianBlurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
-    [gaussianBlurFilter setValue:invertedMaskCIImage forKey:@"inputImage"];
-    [gaussianBlurFilter setValue:@(blurRadius) forKey:@"inputRadius"];
+    [gaussianBlurFilter setValue:invertedMaskCIImage forKey:kCIInputImageKey];
+    [gaussianBlurFilter setValue:@(blurRadius) forKey:kCIInputRadiusKey];
     CIImage *gaussianBlurInvertedMaskCIImage = gaussianBlurFilter.outputImage;
 
     CIImage *croppedImage = [gaussianBlurInvertedMaskCIImage imageByCroppingToRect:invertedMaskCIImage.extent];
