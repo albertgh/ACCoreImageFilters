@@ -30,7 +30,7 @@
                 NSError *error;
                 NSData *data = [NSData dataWithContentsOfURL:kernelURL];
                 self.customKernel =
-                [CIKernel kernelWithFunctionName:@"aCImageOpacity"
+                [CIKernel kernelWithFunctionName:@"acImageOpacity"
                             fromMetalLibraryData:data
                                            error:&error];
                 if (self.customKernel == nil) {

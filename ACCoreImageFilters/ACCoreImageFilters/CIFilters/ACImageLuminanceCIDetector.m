@@ -22,21 +22,21 @@
     self = [super init];
     if (self) {
         if (self.customKernel == nil) {
-//            if (@available(iOS 11.0, *)) {
-//                NSURL *kernelURL =
-//                [[NSBundle bundleForClass:[ACImageLuminanceCIDetector class]]
-//                 URLForResource:@"ACImageLuminanceCIDetector"
-//                 withExtension:@"metallib"];
-//                NSError *error;
-//                NSData *data = [NSData dataWithContentsOfURL:kernelURL];
-//                self.customKernel =
-//                [CIKernel kernelWithFunctionName:@"aCImageLuminance"
-//                            fromMetalLibraryData:data
-//                                           error:&error];
-//                if (self.customKernel == nil) {
-//                    return nil;
-//                }
-//            } else {
+            if (@available(iOS 11.0, *)) {
+                NSURL *kernelURL =
+                [[NSBundle bundleForClass:[ACImageLuminanceCIDetector class]]
+                 URLForResource:@"ACImageLuminanceCIDetector"
+                 withExtension:@"metallib"];
+                NSError *error;
+                NSData *data = [NSData dataWithContentsOfURL:kernelURL];
+                self.customKernel =
+                [CIKernel kernelWithFunctionName:@"acImageLuminance"
+                            fromMetalLibraryData:data
+                                           error:&error];
+                if (self.customKernel == nil) {
+                    return nil;
+                }
+            } else {
                 NSBundle *bundle = [NSBundle bundleForClass: [self class]];
                 NSURL *kernelURL = [bundle URLForResource:@"ACImageLuminanceCIDetector" withExtension:@"cikernel"];
                 
@@ -53,7 +53,7 @@
                 
                 NSArray *kernels = [CIKernel kernelsWithString:kernelCode];
                 self.customKernel = [kernels objectAtIndex:0];
-            //}
+            }
         }
     }
     return self;
@@ -77,7 +77,7 @@
 
 - (CGFloat)imageLuminance {
     CIImage *outputImage = self.outputImage;
-
+    
     CIFilter *filter = [CIFilter filterWithName:@"CIAreaAverage"];
     [filter setValue:outputImage forKey:kCIInputImageKey];
     CGRect inputExtent = outputImage.extent;
@@ -102,9 +102,9 @@
     
     const uint8_t* pixel = &byteBuffer[0];
     float red   = pixel[0] / 255.0;
-    float green = pixel[1] / 255.0;
-    float blue  = pixel[2] / 255.0;
-    float alpha = pixel[3] / 255.0;
+//    float green = pixel[1] / 255.0;
+//    float blue  = pixel[2] / 255.0;
+//    float alpha = pixel[3] / 255.0;
     
     return @(red).floatValue;
 }

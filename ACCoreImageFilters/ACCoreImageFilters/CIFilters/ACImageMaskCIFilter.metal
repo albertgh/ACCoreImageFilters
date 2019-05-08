@@ -13,7 +13,7 @@ using namespace metal;
 
 extern "C" { namespace coreimage {
 
-    float4 aCImageMask(sampler image,
+    float4 acImageMask(sampler image,
                        float3 maskColor,
                        float needInvertedMask) {
         float4 textureColor = image.sample(image.coord());

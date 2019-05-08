@@ -13,7 +13,7 @@ using namespace metal;
 
 extern "C" { namespace coreimage {
     
-    float4 aCImageClip(sampler image,
+    float4 acImageClip(sampler image,
                        sampler clipShapeImage) {
         float4 textureColor = image.sample(image.coord());
         float4 textureColor2 = clipShapeImage.sample(clipShapeImage.coord());

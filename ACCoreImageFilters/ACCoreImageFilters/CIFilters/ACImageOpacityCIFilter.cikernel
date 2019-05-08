@@ -1,4 +1,4 @@
-kernel vec4 vignetteKernel(sampler image, float alpha)
+kernel vec4 acImageOpacity(sampler image, float alpha)
 {
     vec4 textureColor = sample(image, samplerCoord(image));
     textureColor.a = (alpha * textureColor.a);

@@ -1,4 +1,4 @@
-kernel vec4 aCImageClip(sampler image, sampler clipShapeImage)
+kernel vec4 acImageClip(sampler image, sampler clipShapeImage)
 {
     vec4 textureColor = sample(image, samplerCoord(image));
     vec4 textureColor2 = sample(clipShapeImage, samplerCoord(clipShapeImage));

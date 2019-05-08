@@ -20,13 +20,14 @@
 		5025951E228166B100517016 /* ACImageMaskCIFilter.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 5025951C228166B100517016 /* ACImageMaskCIFilter.cikernel */; };
 		5025952322816A1400517016 /* ACImageOpacityCIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5025951F22816A1300517016 /* ACImageOpacityCIFilter.m */; };
 		5025952822816A3D00517016 /* ACImageOpacityCIFilter.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 5025952722816A3D00517016 /* ACImageOpacityCIFilter.cikernel */; };
-		5025952B22816B4300517016 /* ACImageOpacityCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 5025952922816B4200517016 /* ACImageOpacityCIFilter.metallib */; };
-		5025952C22816B4300517016 /* ACImageMaskCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 5025952A22816B4200517016 /* ACImageMaskCIFilter.metallib */; };
 		5025952F22816B9D00517016 /* ACImageClipCIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5025952E22816B9D00517016 /* ACImageClipCIFilter.m */; };
 		5025953122816C4E00517016 /* ACImageClipCIFilter.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 5025953022816C4E00517016 /* ACImageClipCIFilter.cikernel */; };
-		502595352281801E00517016 /* ACImageClipCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595342281801E00517016 /* ACImageClipCIFilter.metallib */; };
 		50259538228187B800517016 /* ACImageLuminanceCIDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 50259537228187B800517016 /* ACImageLuminanceCIDetector.m */; };
 		5025953A2281885100517016 /* ACImageLuminanceCIDetector.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 502595392281885100517016 /* ACImageLuminanceCIDetector.cikernel */; };
+		502595552282B40800517016 /* ACImageClipCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595512282B40500517016 /* ACImageClipCIFilter.metallib */; };
+		502595562282B40800517016 /* ACImageLuminanceCIDetector.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595522282B40600517016 /* ACImageLuminanceCIDetector.metallib */; };
+		502595572282B40800517016 /* ACImageMaskCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595532282B40700517016 /* ACImageMaskCIFilter.metallib */; };
+		502595582282B40800517016 /* ACImageOpacityCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595542282B40700517016 /* ACImageOpacityCIFilter.metallib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,16 +52,18 @@
 		5025951F22816A1300517016 /* ACImageOpacityCIFilter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACImageOpacityCIFilter.m; sourceTree = "<group>"; };
 		5025952122816A1400517016 /* ACImageOpacityCIFilter.metal */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.metal; path = ACImageOpacityCIFilter.metal; sourceTree = "<group>"; };
 		5025952722816A3D00517016 /* ACImageOpacityCIFilter.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACImageOpacityCIFilter.cikernel; sourceTree = "<group>"; };
-		5025952922816B4200517016 /* ACImageOpacityCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageOpacityCIFilter.metallib; sourceTree = "<group>"; };
-		5025952A22816B4200517016 /* ACImageMaskCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageMaskCIFilter.metallib; sourceTree = "<group>"; };
 		5025952D22816B9D00517016 /* ACImageClipCIFilter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACImageClipCIFilter.h; sourceTree = "<group>"; };
 		5025952E22816B9D00517016 /* ACImageClipCIFilter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACImageClipCIFilter.m; sourceTree = "<group>"; };
 		5025953022816C4E00517016 /* ACImageClipCIFilter.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACImageClipCIFilter.cikernel; sourceTree = "<group>"; };
 		5025953222817F2E00517016 /* ACImageClipCIFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ACImageClipCIFilter.metal; sourceTree = "<group>"; };
-		502595342281801E00517016 /* ACImageClipCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageClipCIFilter.metallib; sourceTree = "<group>"; };
 		50259536228187B800517016 /* ACImageLuminanceCIDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACImageLuminanceCIDetector.h; sourceTree = "<group>"; };
 		50259537228187B800517016 /* ACImageLuminanceCIDetector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACImageLuminanceCIDetector.m; sourceTree = "<group>"; };
 		502595392281885100517016 /* ACImageLuminanceCIDetector.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACImageLuminanceCIDetector.cikernel; sourceTree = "<group>"; };
+		5025954F2282B30100517016 /* ACImageLuminanceCIDetector.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ACImageLuminanceCIDetector.metal; sourceTree = "<group>"; };
+		502595512282B40500517016 /* ACImageClipCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageClipCIFilter.metallib; sourceTree = "<group>"; };
+		502595522282B40600517016 /* ACImageLuminanceCIDetector.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageLuminanceCIDetector.metallib; sourceTree = "<group>"; };
+		502595532282B40700517016 /* ACImageMaskCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageMaskCIFilter.metallib; sourceTree = "<group>"; };
+		502595542282B40700517016 /* ACImageOpacityCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageOpacityCIFilter.metallib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,20 +117,22 @@
 				500D225B2278369500CA1E4D /* ACImageMaskCIFilter.m */,
 				5025951C228166B100517016 /* ACImageMaskCIFilter.cikernel */,
 				500D225F2278409B00CA1E4D /* ACImageMaskCIFilter.metal */,
-				5025952A22816B4200517016 /* ACImageMaskCIFilter.metallib */,
+				502595532282B40700517016 /* ACImageMaskCIFilter.metallib */,
 				502594EB227EF67A00517016 /* ACImageOpacityCIFilter.h */,
 				5025951F22816A1300517016 /* ACImageOpacityCIFilter.m */,
 				5025952722816A3D00517016 /* ACImageOpacityCIFilter.cikernel */,
 				5025952122816A1400517016 /* ACImageOpacityCIFilter.metal */,
-				5025952922816B4200517016 /* ACImageOpacityCIFilter.metallib */,
+				502595542282B40700517016 /* ACImageOpacityCIFilter.metallib */,
 				5025952D22816B9D00517016 /* ACImageClipCIFilter.h */,
 				5025952E22816B9D00517016 /* ACImageClipCIFilter.m */,
 				5025953022816C4E00517016 /* ACImageClipCIFilter.cikernel */,
 				5025953222817F2E00517016 /* ACImageClipCIFilter.metal */,
-				502595342281801E00517016 /* ACImageClipCIFilter.metallib */,
+				502595512282B40500517016 /* ACImageClipCIFilter.metallib */,
 				50259536228187B800517016 /* ACImageLuminanceCIDetector.h */,
 				50259537228187B800517016 /* ACImageLuminanceCIDetector.m */,
 				502595392281885100517016 /* ACImageLuminanceCIDetector.cikernel */,
+				5025954F2282B30100517016 /* ACImageLuminanceCIDetector.metal */,
+				502595522282B40600517016 /* ACImageLuminanceCIDetector.metallib */,
 			);
 			path = CIFilters;
 			sourceTree = "<group>";
@@ -201,17 +206,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				500D224F227710D100CA1E4D /* LaunchScreen.storyboard in Resources */,
-				5025952C22816B4300517016 /* ACImageMaskCIFilter.metallib in Resources */,
 				500D226622785F5200CA1E4D /* shuijiao.jpg in Resources */,
 				5025952822816A3D00517016 /* ACImageOpacityCIFilter.cikernel in Resources */,
 				500D224C227710D100CA1E4D /* Assets.xcassets in Resources */,
 				5025951E228166B100517016 /* ACImageMaskCIFilter.cikernel in Resources */,
 				5025953122816C4E00517016 /* ACImageClipCIFilter.cikernel in Resources */,
 				5025953A2281885100517016 /* ACImageLuminanceCIDetector.cikernel in Resources */,
-				5025952B22816B4300517016 /* ACImageOpacityCIFilter.metallib in Resources */,
+				502595572282B40800517016 /* ACImageMaskCIFilter.metallib in Resources */,
 				500D226422785F5200CA1E4D /* star.png in Resources */,
-				502595352281801E00517016 /* ACImageClipCIFilter.metallib in Resources */,
+				502595582282B40800517016 /* ACImageOpacityCIFilter.metallib in Resources */,
+				502595562282B40800517016 /* ACImageLuminanceCIDetector.metallib in Resources */,
 				500D226522785F5200CA1E4D /* shuijiao_clipped.png in Resources */,
+				502595552282B40800517016 /* ACImageClipCIFilter.metallib in Resources */,
 				502594EA227ED36F00517016 /* testtt.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

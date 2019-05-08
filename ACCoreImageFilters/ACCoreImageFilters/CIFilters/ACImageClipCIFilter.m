@@ -30,7 +30,7 @@
                 NSError *error;
                 NSData *data = [NSData dataWithContentsOfURL:kernelURL];
                 self.customKernel =
-                [CIKernel kernelWithFunctionName:@"aCImageClip"
+                [CIKernel kernelWithFunctionName:@"acImageClip"
                             fromMetalLibraryData:data
                                            error:&error];
                 if (self.customKernel == nil) {

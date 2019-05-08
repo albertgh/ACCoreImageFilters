@@ -13,7 +13,7 @@ using namespace metal;
 
 extern "C" { namespace coreimage {
     
-    float4 aCImageOpacity(sampler image,
+    float4 acImageOpacity(sampler image,
                           float alpha) {
         float4 textureColor = image.sample(image.coord());
         textureColor.a = (alpha * textureColor.a);

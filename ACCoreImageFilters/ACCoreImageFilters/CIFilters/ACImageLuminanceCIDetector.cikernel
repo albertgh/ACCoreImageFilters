@@ -1,4 +1,4 @@
-kernel vec4 aCImageLuminance(sampler image)
+kernel vec4 acImageLuminance(sampler image)
 {
     vec3 luminanceWeighting = vec3(0.2125, 0.7154, 0.0721);  // Values from "Graphics Shaders: Theory and Practice" by Bailey and Cunningham
 
