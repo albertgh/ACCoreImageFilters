@@ -25,6 +25,8 @@
 		5025952F22816B9D00517016 /* ACImageClipCIFilter.m in Sources */ = {isa = PBXBuildFile; fileRef = 5025952E22816B9D00517016 /* ACImageClipCIFilter.m */; };
 		5025953122816C4E00517016 /* ACImageClipCIFilter.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 5025953022816C4E00517016 /* ACImageClipCIFilter.cikernel */; };
 		502595352281801E00517016 /* ACImageClipCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595342281801E00517016 /* ACImageClipCIFilter.metallib */; };
+		50259538228187B800517016 /* ACImageLuminanceCIDetector.m in Sources */ = {isa = PBXBuildFile; fileRef = 50259537228187B800517016 /* ACImageLuminanceCIDetector.m */; };
+		5025953A2281885100517016 /* ACImageLuminanceCIDetector.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 502595392281885100517016 /* ACImageLuminanceCIDetector.cikernel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -56,6 +58,9 @@
 		5025953022816C4E00517016 /* ACImageClipCIFilter.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACImageClipCIFilter.cikernel; sourceTree = "<group>"; };
 		5025953222817F2E00517016 /* ACImageClipCIFilter.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ACImageClipCIFilter.metal; sourceTree = "<group>"; };
 		502595342281801E00517016 /* ACImageClipCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageClipCIFilter.metallib; sourceTree = "<group>"; };
+		50259536228187B800517016 /* ACImageLuminanceCIDetector.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ACImageLuminanceCIDetector.h; sourceTree = "<group>"; };
+		50259537228187B800517016 /* ACImageLuminanceCIDetector.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ACImageLuminanceCIDetector.m; sourceTree = "<group>"; };
+		502595392281885100517016 /* ACImageLuminanceCIDetector.cikernel */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ACImageLuminanceCIDetector.cikernel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +125,9 @@
 				5025953022816C4E00517016 /* ACImageClipCIFilter.cikernel */,
 				5025953222817F2E00517016 /* ACImageClipCIFilter.metal */,
 				502595342281801E00517016 /* ACImageClipCIFilter.metallib */,
+				50259536228187B800517016 /* ACImageLuminanceCIDetector.h */,
+				50259537228187B800517016 /* ACImageLuminanceCIDetector.m */,
+				502595392281885100517016 /* ACImageLuminanceCIDetector.cikernel */,
 			);
 			path = CIFilters;
 			sourceTree = "<group>";
@@ -199,6 +207,7 @@
 				500D224C227710D100CA1E4D /* Assets.xcassets in Resources */,
 				5025951E228166B100517016 /* ACImageMaskCIFilter.cikernel in Resources */,
 				5025953122816C4E00517016 /* ACImageClipCIFilter.cikernel in Resources */,
+				5025953A2281885100517016 /* ACImageLuminanceCIDetector.cikernel in Resources */,
 				5025952B22816B4300517016 /* ACImageOpacityCIFilter.metallib in Resources */,
 				500D226422785F5200CA1E4D /* star.png in Resources */,
 				502595352281801E00517016 /* ACImageClipCIFilter.metallib in Resources */,
@@ -217,6 +226,7 @@
 				500D2247227710CF00CA1E4D /* ViewController.m in Sources */,
 				500D225C2278369500CA1E4D /* ACImageMaskCIFilter.m in Sources */,
 				5025952322816A1400517016 /* ACImageOpacityCIFilter.m in Sources */,
+				50259538228187B800517016 /* ACImageLuminanceCIDetector.m in Sources */,
 				5025952F22816B9D00517016 /* ACImageClipCIFilter.m in Sources */,
 				500D2252227710D100CA1E4D /* main.m in Sources */,
 				500D2244227710CF00CA1E4D /* AppDelegate.m in Sources */,

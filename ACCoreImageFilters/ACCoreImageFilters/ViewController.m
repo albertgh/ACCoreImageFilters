@@ -11,7 +11,9 @@
 #import "ACImageMaskCIFilter.h"
 #import "ACImageOpacityCIFilter.h"
 #import "ACImageClipCIFilter.h"
+#import "ACImageLuminanceCIDetector.h"
 
+#import <OpenGLES/ES2/gl.h>
 
 @interface ViewController ()
 
@@ -30,14 +32,18 @@
     
     [self configSubviews];
     
-    self.originalImageView.image = [UIImage imageNamed:@"shuijiao_clipped.png"];
+    UIImage *image = [UIImage imageNamed:@"shuijiao_clipped.png"];
+    
+    self.originalImageView.image = image;
     
     
     [self testClipGlow];
-    //[self testHardLightWithMask];
+    [self testHardLightWithMask];
     
-//    UIColor *avgColor =  [self avgColorFromImage:[UIImage imageNamed:@"star.png"]];
-//    self.view.backgroundColor = avgColor;
+    //UIColor *avgColor =  [self avgColorFromImage:image];
+    //self.view.backgroundColor = avgColor;
+    
+    [self luminanceFromImage:image];
 
 }
 
@@ -89,7 +95,7 @@
     CIImage *invertedMaskCIImage = filter.outputImage;
     
     
-    CGFloat blurRadius = (originalImage.size.width * 0.03);
+    CGFloat blurRadius = (originalImage.size.width * 0.02);
     NSLog(@"blur radius = %@", @(blurRadius));
     CIFilter *gaussianBlurFilter = [CIFilter filterWithName:@"CIGaussianBlur"];
     [gaussianBlurFilter setValue:invertedMaskCIImage forKey:@"inputImage"];
@@ -184,6 +190,23 @@
     return resImage;
 }
 
+- (CGFloat)luminanceFromImage:(UIImage *)image {
+    if (!image) {
+        return 0.0;
+    }
+    
+    CIImage *inputImage = [[CIImage alloc] initWithImage:image];
+    
+    ACImageLuminanceCIDetector *filter = [[ACImageLuminanceCIDetector alloc] init];
+    filter.inputImage = inputImage;
+    
+    CGFloat imageLum = [filter imageLuminance];
+    
+    NSLog(@"lum: %@", @(imageLum));
+    
+    return imageLum;
+}
+
 - (UIColor *)avgColorFromImage:(UIImage *)image {
     if (!image) {
         return nil;
@@ -200,17 +223,12 @@
                         Z:inputExtent.size.width
                         W:inputExtent.size.height];
     [filter setValue:extentVector forKey:kCIInputExtentKey];
-    CIImage *outputImage = [filter valueForKey:@"outputImage"];
-    
-
-
-    EAGLContext *aEAGLContext = [[EAGLContext alloc] initWithAPI:kEAGLRenderingAPIOpenGLES2];
-    NSDictionary *options = @{ kCIContextWorkingColorSpace : [NSNull null] };
-    CIContext *aContext = [CIContext contextWithEAGLContext:aEAGLContext options:options];
+    CIImage *outputImage = filter.outputImage;
     
     size_t rowBytes = 32 ; // ARGB has 4 components
     uint8_t byteBuffer[rowBytes]; // Buffer to render into
-    
+    NSDictionary *options = @{ kCIContextWorkingColorSpace : [NSNull null] };
+    CIContext *aContext = [CIContext contextWithOptions:options];
     [aContext render:outputImage
             toBitmap:byteBuffer
             rowBytes:rowBytes
@@ -224,12 +242,14 @@
     float blue  = pixel[2] / 255.0;
     float alpha = pixel[3] / 255.0;
     
-    //NSLog(@"%f, %f, %f, %f \n", red, green, blue, alpha);
+    NSLog(@"ac_flag %f, %f, %f, %f \n", red, green, blue, alpha);
     
+
     UIColor *averageColor = [UIColor colorWithRed:red
                                             green:green
                                              blue:blue
                                             alpha:alpha];
+
 
     return averageColor;
 }
