@@ -8,8 +8,6 @@
 
 #import "ACImageMaskCIFilter.h"
 
-#import <Metal/Metal.h>
-#import <Metal/MTLDevice.h>
 
 @interface ACImageMaskCIFilter ()
 
