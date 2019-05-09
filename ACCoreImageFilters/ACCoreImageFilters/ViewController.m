@@ -38,7 +38,7 @@
     
     
     [self testClipGlow];
-    [self testHardLightWithMask];
+    //[self testHardLightWithMask];
     
     //UIColor *avgColor =  [self avgColorFromImage:image];
     //self.view.backgroundColor = avgColor;

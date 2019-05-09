@@ -1,9 +1,12 @@
-kernel vec4 acImageMask(sampler image, vec3 maskColor, float needInvertedMask)
+kernel vec4 vsImageMask(sampler image, vec3 maskColor, float needInvertedMask)
 {
     vec4 textureColor = sample(image, samplerCoord(image));
-    textureColor.rgb = maskColor;
+
+    float alpha = textureColor.a;
+
     if (needInvertedMask > 0.0) {
-        textureColor.a = (1.0 - textureColor.a);
+    alpha = (1.0 - textureColor.a);
     }
-    return textureColor;
+
+    return vec4((maskColor.rgb * alpha), alpha);
 }

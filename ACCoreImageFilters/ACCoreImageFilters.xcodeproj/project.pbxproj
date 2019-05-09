@@ -26,8 +26,8 @@
 		5025953A2281885100517016 /* ACImageLuminanceCIDetector.cikernel in Resources */ = {isa = PBXBuildFile; fileRef = 502595392281885100517016 /* ACImageLuminanceCIDetector.cikernel */; };
 		502595552282B40800517016 /* ACImageClipCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595512282B40500517016 /* ACImageClipCIFilter.metallib */; };
 		502595562282B40800517016 /* ACImageLuminanceCIDetector.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595522282B40600517016 /* ACImageLuminanceCIDetector.metallib */; };
-		502595572282B40800517016 /* ACImageMaskCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595532282B40700517016 /* ACImageMaskCIFilter.metallib */; };
 		502595582282B40800517016 /* ACImageOpacityCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 502595542282B40700517016 /* ACImageOpacityCIFilter.metallib */; };
+		5025955C228417A400517016 /* ACImageMaskCIFilter.metallib in Resources */ = {isa = PBXBuildFile; fileRef = 5025955B228417A300517016 /* ACImageMaskCIFilter.metallib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,8 +62,8 @@
 		5025954F2282B30100517016 /* ACImageLuminanceCIDetector.metal */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.metal; path = ACImageLuminanceCIDetector.metal; sourceTree = "<group>"; };
 		502595512282B40500517016 /* ACImageClipCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageClipCIFilter.metallib; sourceTree = "<group>"; };
 		502595522282B40600517016 /* ACImageLuminanceCIDetector.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageLuminanceCIDetector.metallib; sourceTree = "<group>"; };
-		502595532282B40700517016 /* ACImageMaskCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageMaskCIFilter.metallib; sourceTree = "<group>"; };
 		502595542282B40700517016 /* ACImageOpacityCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageOpacityCIFilter.metallib; sourceTree = "<group>"; };
+		5025955B228417A300517016 /* ACImageMaskCIFilter.metallib */ = {isa = PBXFileReference; lastKnownFileType = "archive.metal-library"; path = ACImageMaskCIFilter.metallib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,7 +117,7 @@
 				500D225B2278369500CA1E4D /* ACImageMaskCIFilter.m */,
 				5025951C228166B100517016 /* ACImageMaskCIFilter.cikernel */,
 				500D225F2278409B00CA1E4D /* ACImageMaskCIFilter.metal */,
-				502595532282B40700517016 /* ACImageMaskCIFilter.metallib */,
+				5025955B228417A300517016 /* ACImageMaskCIFilter.metallib */,
 				502594EB227EF67A00517016 /* ACImageOpacityCIFilter.h */,
 				5025951F22816A1300517016 /* ACImageOpacityCIFilter.m */,
 				5025952722816A3D00517016 /* ACImageOpacityCIFilter.cikernel */,
@@ -210,9 +210,9 @@
 				5025952822816A3D00517016 /* ACImageOpacityCIFilter.cikernel in Resources */,
 				500D224C227710D100CA1E4D /* Assets.xcassets in Resources */,
 				5025951E228166B100517016 /* ACImageMaskCIFilter.cikernel in Resources */,
+				5025955C228417A400517016 /* ACImageMaskCIFilter.metallib in Resources */,
 				5025953122816C4E00517016 /* ACImageClipCIFilter.cikernel in Resources */,
 				5025953A2281885100517016 /* ACImageLuminanceCIDetector.cikernel in Resources */,
-				502595572282B40800517016 /* ACImageMaskCIFilter.metallib in Resources */,
 				500D226422785F5200CA1E4D /* star.png in Resources */,
 				502595582282B40800517016 /* ACImageOpacityCIFilter.metallib in Resources */,
 				502595562282B40800517016 /* ACImageLuminanceCIDetector.metallib in Resources */,

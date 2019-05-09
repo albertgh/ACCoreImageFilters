@@ -17,11 +17,13 @@ extern "C" { namespace coreimage {
                        float3 maskColor,
                        float needInvertedMask) {
         float4 textureColor = image.sample(image.coord());
-        textureColor.rgb = maskColor;
+        
+        float alpha = textureColor.a;
+
         if (needInvertedMask > 0.0) {
-            textureColor.a = (1.0 - textureColor.a);
+            alpha = (1.0 - alpha);
         }
-        return textureColor;
+        return float4((maskColor.rgb * alpha), alpha);
     }
     
 }}
